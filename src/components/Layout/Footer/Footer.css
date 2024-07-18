@@ -1,0 +1,65 @@
+.footer {
+  background-color: #f5f5f5;
+  padding: 20px 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-info,
+.footer-links,
+.footer-social {
+  width: 30%; /* Điều chỉnh độ rộng của các cột */
+}
+
+.footer-links {
+  display: flex; /* Chia thành 3 cột */
+}
+
+.footer-links > div {
+  width: 33.33%; /* Chia đều độ rộng cho 3 cột con */
+}
+
+.footer-social .social-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-social .social-icons a {
+  text-decoration: none;
+  color: #333;
+  font-size: 20px;
+}
+
+.footer-social .social-icons a:hover {
+  color: #0073e6;
+}
+
+/* Responsive cho màn hình nhỏ hơn */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; /* Sắp xếp các cột thành hàng dọc */
+    align-items: center;
+  }
+
+  .footer-info,
+  .footer-links,
+  .footer-social {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    flex-direction: column; /* Sắp xếp các cột con thành hàng dọc */
+  }
+}
+
+.zalo-icon {
+  width: 20px;
+  height: 20px;
+}
