@@ -1,0 +1,32 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  padding: 4px 16px;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(22, 24, 35, 0.03);
+  }
+}
+
+.avatar {
+  background-color: black;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.info {
+  flex: 1;
+  margin-left: 12px;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.address {
+  font-size: 1rem;
+  color: rgba(22, 24, 35, 0.5);
+}

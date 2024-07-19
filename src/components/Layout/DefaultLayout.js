@@ -6,7 +6,14 @@ function DefaultLayout({ children }) {
   return (
     <div>
       <Header />
-      <div className="bg-section">
+      <div
+        style={{
+          backgroundImage: `url(${require("../../assets/images/background1.jpg")})`,
+          backgroundSize: "100%",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
+      >
         <Sidebar />
         <div className="content">{children}</div>
       </div>
