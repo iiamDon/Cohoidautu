@@ -6,6 +6,7 @@ function DefaultLayout({ children }) {
   return (
     <div>
       <Header />
+<<<<<<< HEAD
       <div
         style={{
           backgroundImage: `url(${require("../../assets/images/background1.jpg")})`,
@@ -14,6 +15,9 @@ function DefaultLayout({ children }) {
           backgroundPosition: "center",
         }}
       >
+=======
+      <div className="sidebar h-screen w-1/2 bg-gray-200">
+>>>>>>> 7d747a155fbac383f008aaef4efa392750c7d34e
         <Sidebar />
         <div className="content">{children}</div>
       </div>
