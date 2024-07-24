@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { publicRoutes } from "./routes";
 import DefaultLayout from "./components/Layout/DefaultLayout";
 import { Fragment } from "react";
+import "./GlobalStyles.scss";
 
 function App() {
   return (

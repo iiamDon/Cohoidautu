@@ -1,0 +1,15 @@
+@import "normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@400;500;700&family=Montserrat:wght@400;500;700&display=swap");
+
+html,
+body {
+  font-family: "Be Vietnam", sans-serif;
+}
+
+button,
+input,
+[tabindex] {
+  border: none;
+  outline: none;
+}

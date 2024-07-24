@@ -1,0 +1,33 @@
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+.menu-item-content {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* khoảng cách giữa icon và title */
+  width: 100%;
+}
+
+.menu-item span {
+  margin-left: 8px; /* khoảng cách bên trái của title */
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
