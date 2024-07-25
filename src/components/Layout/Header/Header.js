@@ -8,6 +8,17 @@ import Menu from "../../Popper/Menu";
 
 const cx = classNames.bind(styles);
 
+const currentUser = true;
+
+const handleMenuChange = (menuItem) => {
+  switch (menuItem.type) {
+    case "language":
+      // Handle change language
+      break;
+    default:
+  }
+};
+
 const MENU_ITEMS = [
   {
     icon: <i className="fa-solid fa-circle-question"></i>,
@@ -15,14 +26,33 @@ const MENU_ITEMS = [
     to: "/feedback",
   },
   {
-    icon: <i className="fa-solid fa-keyboard"></i>,
-    title: "Keyboard shortcut",
+    icon: <i className="fa-solid fa-moon"></i>,
+    title: "Light/Dark mode",
   },
   {
     icon: <i className="fa-solid fa-cog"></i>,
     title: "Settings",
+    to: "/setting",
   },
 ];
+
+const userSpecificMenuItems = [
+  {
+    icon: <i className="fa-solid fa-user"></i>,
+    title: "User",
+    to: "/user",
+  },
+  {
+    icon: <i className="fa-solid fa-right-from-bracket"></i>,
+    title: "Logout",
+    to: "/logout",
+    separate: true,
+  },
+];
+
+const finalMenuItems = currentUser
+  ? [...MENU_ITEMS, ...userSpecificMenuItems]
+  : MENU_ITEMS;
 
 const Header = () => {
   return (
@@ -38,47 +68,67 @@ const Header = () => {
           </button>
         </Link>
 
-        <Link to="/">
+        <Link to="/food">
           <button className={cx("btn-ds")}>
             <p>Đồ ăn</p>
           </button>
         </Link>
 
-        <Link to="/">
+        <Link to="/fresh">
           <button className={cx("btn-ds")}>
             <p>Thực phẩm</p>
           </button>
         </Link>
 
-        <Link to="/">
+        <Link to="/flowers">
           <button className={cx("btn-ds")}>
             <p>Hoa</p>
           </button>
         </Link>
 
-        <Link to="/">
+        <Link to="/mart">
           <button className={cx("btn-ds")}>
             <p>Siêu thị</p>
           </button>
         </Link>
 
-        <Link to="/">
+        <Link to="/cart">
           <button className={cx("btn-ds")}>
             <p>Giỏ hàng</p>
           </button>
         </Link>
 
-        <Link to="/login">
-          <button className={cx("login-button")}>
-            <p>Login</p>
-          </button>
-        </Link>
+        <div className={cx("actions")}>
+          {currentUser ? (
+            <>
+              <button>
+                <i className="fa-solid fa-bell"></i>
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to="/login">
+                <button className={cx("login-button")}>
+                  <p>Login</p>
+                </button>
+              </Link>
+            </>
+          )}
 
-        <Menu items={MENU_ITEMS}>
-          <button className={cx("more-button")}>
-            <i className="fa-solid fa-ellipsis-vertical"></i>
-          </button>
-        </Menu>
+          <Menu items={finalMenuItems} onChange={handleMenuChange}>
+            {currentUser ? (
+              <img
+                className={cx("user-avatar")}
+                src="https://i.pinimg.com/736x/bc/43/98/bc439871417621836a0eeea768d60944.jpg"
+                alt="Tên người dùng"
+              />
+            ) : (
+              <button className={cx("more-button")}>
+                <i className="fa-solid fa-ellipsis-vertical"></i>
+              </button>
+            )}
+          </Menu>
+        </div>
       </div>
     </header>
   );

@@ -6,15 +6,20 @@ import classNames from "classnames/bind";
 const cx = classNames.bind(styles);
 
 function MenuItem({ data }) {
+  const Component = data.to ? Link : "button";
+
   return (
-    <Link to={data.to} className={cx("menu-item-link")}>
-      <button className={cx("menu-item")}>
-        <div className={cx("menu-item-content")}>
-          {data.icon}
-          <span>{data.title}</span>
+    <>
+      {data.separate && <div className={cx("separator")}></div>}
+      <Component to={data.to} className={cx("menu-item-link")}>
+        <div className={cx("menu-item")}>
+          <div className={cx("menu-item-content")}>
+            {data.icon}
+            <span>{data.title}</span>
+          </div>
         </div>
-      </button>
-    </Link>
+      </Component>
+    </>
   );
 }
 
