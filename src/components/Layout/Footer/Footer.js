@@ -1,65 +1,69 @@
 import React from "react";
-import "./Footer.css";
+import styles from "./Footer.module.scss";
+import classNames from "classnames/bind";
+import zaloIcon from "../../../assets/images/zalo-icon.png";
+
+const cx = classNames.bind(styles);
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footer-container">
-        <div className="footer-info">
-          <div className="company-info">
+    <footer className={cx("footer")}>
+      <div className={cx("footer-container")}>
+        <div className={cx("footer-info")}>
+          <div className={cx("company-info")}>
             <h3>MangCut Shop</h3>
             <p>Số điện thoại: 0348057181</p>
             <p>Email: AnhNVT.B20VT031@stu.ptit.edu.vn</p>
           </div>
-          <div className="legal">
+          <div className={cx("legal")}>
             <p>Quy chế hoạt động</p>
             <p>Chính sách bảo mật</p>
           </div>
         </div>
-        <div className="footer-links">
-          <div className="services">
+        <div className={cx("footer-links")}>
+          <div className={cx("services")}>
             <h4>Dịch Vụ</h4>
             <ul>
               <li>
-                <a href="/giaodoan">Giao đồ ăn</a>
+                <a href="/delivery">Giao đồ ăn</a>
               </li>
               <li>
-                <a href="/dicho">Đi chợ</a>
+                <a href="/goshoping">Đi chợ</a>
               </li>
             </ul>
           </div>
-          <div className="partnerships">
+          <div className={cx("partnerships")}>
             <h4>Hợp tác</h4>
             <ul>
               <li>
-                <a href="/store">Mở cửa hàng</a>
+                <a href="/openstore">Mở cửa hàng</a>
               </li>
               <li>
-                <a href="/hoptac">Hợp tác về Marketing</a>
+                <a href="/coop">Hợp tác về Marketing</a>
               </li>
               <li>
-                <a href="/tuyendung">Tuyển dụng</a>
+                <a href="/hire">Tuyển dụng</a>
               </li>
             </ul>
           </div>
-          <div className="regions">
+          <div className={cx("regions")}>
             <h4>Khu vực</h4>
             <ul>
               <li>
-                <a href="/regions">Hồ Chí Minh</a>
+                <a href="/hochiminh">Hồ Chí Minh</a>
               </li>
               <li>
-                <a href="/regions">Hà Nội</a>
+                <a href="/hanoi">Hà Nội</a>
               </li>
               <li>
-                <a href="/regions">Đà Nẵng</a>
+                <a href="/danang">Đà Nẵng</a>
               </li>
             </ul>
           </div>
         </div>
-        <div className="footer-social">
+        <div className={cx("footer-social")}>
           <h4>Kết nối với chúng tôi</h4>
-          <div className="social-icons">
+          <div className={cx("social-icons")}>
             <a
               href="https://www.facebook.com/mangcutt.02"
               target="_blank"
@@ -82,10 +86,14 @@ const Footer = () => {
               <i className="fab fa-linkedin-in"></i>
             </a>
             <a href="https://zalo.me" target="_blank" rel="noopener noreferrer">
-              <img src="/zalo-icon.png" alt="Zalo" className="zalo-icon" />
+              <img
+                src={zaloIcon} // Sử dụng ảnh đã import
+                alt="Zalo"
+                className={cx("zalo-icon")}
+              />
             </a>
           </div>
-          <div className="language-selector">
+          <div className={cx("language-selector")}>
             <select>
               <option value="vi">Vietnamese</option>
               <option value="en">English</option>

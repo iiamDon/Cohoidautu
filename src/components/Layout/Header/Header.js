@@ -36,12 +36,13 @@ const MENU_ITEMS = [
   },
 ];
 
-const userSpecificMenuItems = [
+const userMenu = [
   {
     icon: <i className="fa-solid fa-user"></i>,
-    title: "User",
+    title: "View profile",
     to: "/user",
   },
+  ...MENU_ITEMS,
   {
     icon: <i className="fa-solid fa-right-from-bracket"></i>,
     title: "Logout",
@@ -49,10 +50,6 @@ const userSpecificMenuItems = [
     separate: true,
   },
 ];
-
-const finalMenuItems = currentUser
-  ? [...MENU_ITEMS, ...userSpecificMenuItems]
-  : MENU_ITEMS;
 
 const Header = () => {
   return (
@@ -115,7 +112,10 @@ const Header = () => {
             </>
           )}
 
-          <Menu items={finalMenuItems} onChange={handleMenuChange}>
+          <Menu
+            items={currentUser ? userMenu : MENU_ITEMS}
+            onChange={handleMenuChange}
+          >
             {currentUser ? (
               <img
                 className={cx("user-avatar")}

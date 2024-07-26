@@ -8,7 +8,7 @@ function DefaultLayout({ children }) {
       <Header />
       <div
         style={{
-          backgroundImage: `url(${require("../../assets/images/background1.jpg")})`,
+          backgroundImage: `url(${require("../../assets/images/background.png")})`,
           backgroundSize: "100%",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",

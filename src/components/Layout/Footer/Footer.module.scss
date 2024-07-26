@@ -13,15 +13,15 @@
 .footer-info,
 .footer-links,
 .footer-social {
-  width: 30%; /* Điều chỉnh độ rộng của các cột */
+  width: 30%;
 }
 
 .footer-links {
-  display: flex; /* Chia thành 3 cột */
+  display: flex;
 }
 
 .footer-links > div {
-  width: 33.33%; /* Chia đều độ rộng cho 3 cột con */
+  width: 33.33%;
 }
 
 .footer-social .social-icons {
@@ -40,22 +40,22 @@
   color: #0073e6;
 }
 
-/* Responsive cho màn hình nhỏ hơn */
+/* Responsive screen */
 @media (max-width: 768px) {
   .footer-container {
-    flex-direction: column; /* Sắp xếp các cột thành hàng dọc */
+    flex-direction: column;
     align-items: center;
   }
 
   .footer-info,
   .footer-links,
   .footer-social {
-    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    width: 100%;
     margin-bottom: 20px;
   }
 
   .footer-links {
-    flex-direction: column; /* Sắp xếp các cột con thành hàng dọc */
+    flex-direction: column;
   }
 }
 

@@ -3,7 +3,6 @@ import React from "react";
 import "tippy.js/dist/tippy.css";
 import Tippy from "@tippyjs/react/headless";
 import classNames from "classnames/bind";
-
 import styles from "./Sidebar.module.scss";
 import { Wrapper as PopperWrapper } from "../Popper";
 import AccountItem from "../AccountItem";
