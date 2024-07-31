@@ -6,7 +6,7 @@ import MenuItem from "./MenuItem";
 
 const cx = classNames.bind(styles);
 
-function Menu({ children, items = [] }) {
+function Menu({ children, items = [], hideOnClick = false }) {
   const renderItems = () => {
     return items.map((item, index) => <MenuItem key={index} data={item} />);
   };
@@ -15,6 +15,7 @@ function Menu({ children, items = [] }) {
     <Tippy
       interactive
       delay={[0, 700]}
+      hideOnClick={hideOnClick}
       render={(attrs) => (
         <div
           className={cx("menu-list")}
