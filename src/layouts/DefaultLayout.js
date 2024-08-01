@@ -1,6 +1,6 @@
-import Header from "./Header/Header";
-import Footer from "./Footer/Footer";
-import Sidebar from "../layouts/Sidebar/Sidebar";
+import Header from "./Header";
+import Footer from "./Footer";
+import Sidebar from "../layouts/Sidebar";
 import backgroundImage from "../../src/assets/images/background.png";
 
 function DefaultLayout({ children }) {
