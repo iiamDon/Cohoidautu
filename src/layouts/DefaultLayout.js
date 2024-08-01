@@ -1,6 +1,7 @@
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
-import Sidebar from "../Sidebar/Sidebar";
+import Sidebar from "../layouts/Sidebar/Sidebar";
+import backgroundImage from "../../src/assets/images/background.png";
 
 function DefaultLayout({ children }) {
   return (
@@ -8,7 +9,7 @@ function DefaultLayout({ children }) {
       <Header />
       <div
         style={{
-          backgroundImage: `url(${require("../../assets/images/background.png")})`,
+          backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "100%",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",

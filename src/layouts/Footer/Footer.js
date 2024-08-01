@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Footer.module.scss";
 import classNames from "classnames/bind";
-import zaloIcon from "../../../assets/images/zalo-icon.png";
+import zaloIcon from "../../assets/images/zalo-icon.png";
 
 const cx = classNames.bind(styles);
 

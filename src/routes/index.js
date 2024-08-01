@@ -1,4 +1,4 @@
-import HeaderOnly from "../components/Layout/HeaderOnly";
+import HeaderOnly from "../layouts/HeaderOnly";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Login/Register";

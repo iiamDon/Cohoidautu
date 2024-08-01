@@ -4,7 +4,7 @@ import "tippy.js/dist/tippy.css";
 import classNames from "classnames/bind";
 
 import styles from "./Header.module.scss";
-import Menu from "../../Popper/Menu";
+import Menu from "../../components/Popper/Menu";
 
 const cx = classNames.bind(styles);
 
