@@ -65,27 +65,27 @@ const Header = () => {
           </button>
         </Link>
 
-        <Link to="/food">
+        <Link to="/pizza">
           <button className={cx("btn-ds")}>
-            <p>Đồ ăn</p>
+            <p>Pizza</p>
           </button>
         </Link>
 
-        <Link to="/fresh">
+        <Link to="/drinks">
           <button className={cx("btn-ds")}>
-            <p>Thực phẩm</p>
+            <p>Đồ uống</p>
           </button>
         </Link>
 
-        <Link to="/flowers">
+        <Link to="/sauces">
           <button className={cx("btn-ds")}>
-            <p>Hoa</p>
+            <p>Nước sốt</p>
           </button>
         </Link>
 
-        <Link to="/mart">
+        <Link to="/salads">
           <button className={cx("btn-ds")}>
-            <p>Siêu thị</p>
+            <p>Salads</p>
           </button>
         </Link>
 
