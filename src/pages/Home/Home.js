@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useProductContext } from "../../store/ProductContext";
 import ProductList from "../../components/ProductList";
 import styles from "./Home.module.scss";
@@ -9,6 +9,31 @@ const cx = classNames.bind(styles);
 const Home = () => {
   const { state } = useProductContext();
   const { loading, products, error } = state;
+
+  const [recipes, setRecipes] = useState([]);
+  const [recipeLoading, setRecipeLoading] = useState(true);
+  const [recipeError, setRecipeError] = useState(null);
+  const [visibleRecipes, setVisibleRecipes] = useState(9); // Số lượng recipe hiển thị ban đầu
+
+  useEffect(() => {
+    const fetchRecipes = async () => {
+      try {
+        const response = await fetch("https://dummyjson.com/recipes");
+        const data = await response.json();
+        setRecipes(data.recipes);
+        setRecipeLoading(false);
+      } catch (error) {
+        setRecipeError("Failed to load recipes");
+        setRecipeLoading(false);
+      }
+    };
+
+    fetchRecipes();
+  }, []);
+
+  const handleLoadMore = () => {
+    setVisibleRecipes((prev) => prev + 9); // Tăng số lượng recipe hiển thị thêm 9 mỗi lần nhấn
+  };
 
   return (
     <div className={cx("container")}>
@@ -23,14 +48,34 @@ const Home = () => {
           )}
         </main>
       </div>
-      <div className={cx("map-container")}>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.330828267009!2d105.7859720291946!3d20.979371746126944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135accdd8a1ad71%3A0xa2f9b16036648187!2zSOG7jWMgdmnhu4duIEPDtG5nIG5naOG7hyBCxrB1IGNow61uaCB2aeG7hW4gdGjDtG5n!5e0!3m2!1svi!2s!4v1722846778438!5m2!1svi!2s"
-          title="Bản đồ vị trí học viện Công nghệ Bưu chính viễn thông"
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
+
+      <div className={cx("recipe-container")}>
+        {recipeLoading ? (
+          <p>Loading recipes...</p>
+        ) : recipeError ? (
+          <p>{recipeError}</p>
+        ) : (
+          <div className="flex flex-wrap justify-center gap-5">
+            {recipes.slice(0, visibleRecipes).map((recipe) => (
+              <div
+                key={recipe.id}
+                className="w-[calc(33.33%-20px)] flex flex-col items-center text-center bg-gray-100 p-2 rounded-lg"
+              >
+                <img
+                  src={recipe.image}
+                  alt={recipe.name}
+                  className="w-[232px] h-[232px] object-cover rounded-lg"
+                />
+                <h3 className="mt-2 text-sm text-gray-800">{recipe.name}</h3>
+              </div>
+            ))}
+          </div>
+        )}
+        {visibleRecipes < recipes.length && (
+          <button onClick={handleLoadMore} className={cx("load-more")}>
+            Load More
+          </button>
+        )}
       </div>
     </div>
   );

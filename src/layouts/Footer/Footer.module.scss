@@ -63,3 +63,11 @@
   width: 20px;
   height: 20px;
 }
+
+.map-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}

@@ -8,7 +8,7 @@ import Menu from "../../components/Popper/Menu";
 
 const cx = classNames.bind(styles);
 
-const currentUser = true;
+const currentUser = false;
 
 const handleMenuChange = (menuItem) => {
   switch (menuItem.type) {
